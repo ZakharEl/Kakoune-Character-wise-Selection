@@ -1,0 +1,7 @@
+# Vim's Characterwise Selection in Kakoune
+---
+**Kakoune**, when pasting a something with newlines in it, will paste below or above the last & first line of the selection rather than merely before or after the selection. This behavior in **vim** (another text editor [and the one that kakoune started its existence off of as a fork of]) is known as **line-wise selection**. Literal character for character pasting is known as **character-wise selection**. This plugin provides the character-wise selection functionality that is otherwise missing in kakoune when pasting text.
+
+This plugin will remap **normal mode's** mappings **p**, **P**, **\<a-p\>** & **\<a-P\>** that are used for pasting to the functions **character-wise-paste-after**, **character-wise-paste-before**, **character-wise-paste-sel-after** & **character-wise-paste-sel-before**. Furthermore this plugin will provide the functions listed above to be used elsewhere (building other, functions, plugins, etc.).
+
+A boolean option called **character_wise** is provided and a hook triggered to remap and a hook to unmap as stated above when **character_wise** is globally set to true and false respectively. **\<c-p\>** sets **character_wise** to true & **\<c-P\>** sets it to false.
