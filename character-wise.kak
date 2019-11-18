@@ -25,13 +25,7 @@ define-command character-wise-paste-sel-after %{
 	execute-keys '<a-:>;a'
 	character-wise-insert
 	execute-keys <esc>
-	execute-keys %sh{
-		if [ "$kak_selection" == "$kak_reg_dquote" ]
-		then
-			exit
-		fi
-		printf '<a-;>L<a-;>'
-	}
+	execute-keys '<a-;>L<a-;>'
 }
 declare-option bool character_wise
 hook global GlobalSetOption character_wise=true|yes %{
